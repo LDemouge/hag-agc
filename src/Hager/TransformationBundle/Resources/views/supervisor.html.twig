@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+
+
+{% block title %}
+	HAGER - Alter&Go 
+{%  endblock %}
+
+
+{% block body %}
+
+	{% block menu %}
+	{% endblock %}
+	
+    <div class="container">
+    	{% block content %}<h1>Supervisors' App</h1>{% endblock %}
+    </div>
+    
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+	
+{% endblock %}

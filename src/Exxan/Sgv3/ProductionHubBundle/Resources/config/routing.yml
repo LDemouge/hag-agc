@@ -1,0 +1,3 @@
+sgv3_prod_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: sgv3ProdBundle:Default:index }

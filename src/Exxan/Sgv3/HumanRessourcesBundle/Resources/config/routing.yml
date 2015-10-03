@@ -1,0 +1,3 @@
+sgv3_hr_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: sgv3HrBundle:Default:index }

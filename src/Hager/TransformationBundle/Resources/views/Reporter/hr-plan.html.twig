@@ -1,0 +1,22 @@
+{% verbatim %}
+<div class="container-fluid" ng-controller="hr_plan as ctrl">
+	<div class="row">
+		<div ng-repeat="department in carto"><div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h5 class="panel-title">{{ department.department }}</h5>
+				</div>
+				<div class="table-responsive"><table class="table table-bordered">
+					<tr>
+						
+						<td data-toogle="tooltip" ng-repeat="entity in department.entities" ng-class="ctrl.contextualize({{ entity.progress }})" title="{{ entity.id }}"><a data-toogle="popover" title="detailled information" data-content="And here's some amazing content. It's very engaging. Right?">{{ entity.id }}</a></td>
+						
+					</tr>
+					
+					</div>
+				</table></div>
+			</div>
+		</div></div>
+	</div>
+</div>
+{% endverbatim %}

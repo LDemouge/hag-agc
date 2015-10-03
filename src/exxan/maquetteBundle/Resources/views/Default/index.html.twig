@@ -1,0 +1,43 @@
+{% extends 'goBundle::go.html.twig' %}
+{% block title %}
+	Bienvenue sur le SG v3.0.0
+{% endblock %}
+{% block content %}
+    <div ng-controller="goController as goCtrl">
+    
+    	<div class="jumbotron">
+    		<div class="container">
+    			
+  				<h1>Bienvenue dans le SG v3.0 </h1>
+  				<p>...</p>
+  				<p><a class="btn btn-primary btn-lg" href="#" role="button" ng-click="goCtrl.inverse()">En savoir plus ... </a></p>
+  				
+    		</div>
+    	</div>
+    	
+    	
+    	
+    	
+    	<div class="container" ng-show="goCtrl.showTabs">
+    	
+    		<blockquote>
+ 				 	<p>Chi va piano, va sano</p>
+  					<footer>Quelqu'un de connu <cite title="Source Title">Ou pas</cite></footer>
+			</blockquote>
+			
+			<blockquote class="blockquote-reverse">
+  					<p>Mais faut pas exagérer quand même</p>
+  					<footer>Moi<cite title="Source Title">...</cite></footer>
+			</blockquote>
+			
+			{% verbatim %}
+			<div ng-controller="employeesCtrl as Ctrl">
+				<h2><a class="btn-navbar btn-success btn active" ng-href="/app_dev.php/go/employeesList">On continue ...</a></h2>
+			</div>
+			{% endverbatim %}
+    		
+    		
+    	</div>
+    </div>
+{% endblock %}
+

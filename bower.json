@@ -1,0 +1,25 @@
+{
+  "name": "symfony",
+  "version": "0.0.0",
+  "description": "go",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.5.6",
+    "angular": "~1.4.3",
+    "bootstrap": "twbs/bootstrap#~3.3.5",
+    "nvd3": "~1.8.1"
+  },
+  "resolutions": {
+    "angular": "1.4.6",
+    "nvd3": "~1.8.1",
+    "d3": "^3.4.4"
+  }
+}

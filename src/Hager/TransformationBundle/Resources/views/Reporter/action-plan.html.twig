@@ -1,0 +1,103 @@
+
+{% verbatim %}
+<div class="container-fluid" ng-controller="action_plan as ctrl">
+	<div class="row">
+		<div class="col-md-3">
+		
+			<div class="panel panel-default">
+		 		<div class="panel-heading">
+					<h4 class="panel-title">
+        					<a data-toggle="collapse" data-target="#addItem" ng-click="isCollapsedAdd = !isCollapsedAdd">
+        						Add an action
+        						<span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !isCollapsedAdd, 'glyphicon-chevron-right': isCollapsedAdd}"></span>
+        					</a>
+      					</h4>
+				</div>
+				<div id="addItem" class="panel-collapse collapse">
+					<div class="panel-body">
+						<add-action-plan-item></add-action-plan-item>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel panel-info">
+		 		<div class="panel-heading">
+					<h5 class="panel-title">Overview</h5>
+				</div>
+				
+					<ul class="list-group">
+							<li class="list-group-item">Actions <span class="badge">{{ totalItems() }}</span></li>
+							<li class="list-group-item">Accomplishment rate <span class="badge">{{ accomplishmentRate() }}</span></li>
+    						<li class="list-group-item">Done <span class="badge">{{ totalTransfers() }}</span></li>
+    						<li class="list-group-item">In progress <span class="badge"> {{ transferProgress() }} %</span></li>
+    						<li class="list-group-item">Late<span class="badge">{{ unsettled() }}</span></li>
+   							
+					</ul>
+			</div>
+			
+			
+			
+			<button class="btn btn-danger btn-block" ng-show="isVisibleDelete">Delete this action</button>
+				
+			
+		</div>
+		<div class="col-md-9">
+			<div class="panel panel-default">
+		 		<div class="panel-heading">
+					<h5 class="panel-title">Search an action</h5>
+				</div>
+				
+					
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Activity</th><th>Leader</th><th>Description</th><th>Deadline</th><th>Status</th>
+							</tr>
+							<tr ng-show="newItem">
+								<td>{{ newItem.type }}</td>
+								<td>{{ newItem.name }}</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><input type="text" class="form-control" placeholder="Search"></td>
+								<td><input type="text" class="form-control" placeholder="Search"></td>
+								<td><input type="text" class="form-control" placeholder="Search"></td>
+								<td><select class="form-control selectpicker" multiple>
+        									<optgroup label="action required">
+        										<option>Late</option>
+        										<option>Unsettled</option>
+        										<option>In progress</option>
+        									</optgroup>
+        									<optgroup label="others">
+        										<option>Kept</option>
+        										<option>Transfered</option>
+        									</optgroup>
+        									
+     							</select></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="action in actions.actions"  ng-class="ctrl.contextualize(item)">
+								<td>{{ action.activity }}</td>
+								<td>{{ action.leader }}</td>
+								<td>{{ action.description }}</td>
+								<td>{{ action.deadline }}</td>
+								<td>{{ action.status }}</td>
+							</tr>
+							
+							
+						</tbody>
+					</table>
+				
+			</div>
+		</div>
+		
+		
+	</div>
+</div>
+{% endverbatim %}		
+<script>$('.selectpicker').selectpicker();</script>
+
+
+
+	

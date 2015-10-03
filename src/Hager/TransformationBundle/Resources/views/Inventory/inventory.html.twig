@@ -1,0 +1,106 @@
+
+{% verbatim %}
+<div class="container-fluid" ng-controller="inventory as ctrl">
+	<div class="row">
+		<div class="col-md-3">
+		
+		<!-- 	 <div class="panel-group"> -->
+  				<div class="panel panel-default">
+    				<div class="panel-heading">
+      					<h4 class="panel-title" ng-click="isCollapsedAdd = !isCollapsedAdd">
+        					<a data-toggle="collapse" data-target="#addInventoryItem">
+        						Add an inventory item
+        						<span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !isCollapsedAdd, 'glyphicon-chevron-right': isCollapsedAdd}"></span>
+        					</a>
+      					</h4>
+    				</div>
+    				<div id="addInventoryItem" class="panel-collapse collapse">
+      					<div class="panel-body">
+      						<add-inventory-item></add-inventory-item>
+      					</div>
+      					<div class="panel-footer"><h6>What's this ?<small> Help about this form</small></h6></div>
+    				</div>
+  				</div>
+			<!-- </div> -->
+					
+			<div class="panel panel-info" ng-show="isVisibleOverview">
+		 		<div class="panel-heading">
+					<h5 class="panel-title">Overview</h5>
+				</div>
+				
+					<ul class="list-group">
+							<li class="list-group-item">Total <span class="badge">{{ totalItems() }}</span></li>
+    						<li class="list-group-item">Transfers <span class="badge">{{ totalTransfers() }}</span></li>
+    						<li class="list-group-item">Transfers finalized <span class="badge"> {{ transferProgress() }} %</span></li>
+    						<li class="list-group-item">Unsettled<span class="badge">{{ unsettled() }}</span></li>
+   							
+					</ul>
+			</div>
+			
+			
+			
+			<button class="btn btn-danger btn-block" ng-show="isVisibleDelete">Delete this inventory item</button>
+				
+			
+		</div>
+		<div class="col-md-9">
+			<div class="panel panel-default">
+		 		<div class="panel-heading">
+					<h5 class="panel-title">Search an inventory item</h5>
+				</div>
+				
+					
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Type</th><th>Name</th><th>Transfer</th>
+							</tr>
+							<tr ng-show="newItem">
+								<td>{{ newItem.type }}</td>
+								<td>{{ newItem.name }}</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><select class="form-control selectpicker">
+									<option>All</option>
+									<option>Activities</option>
+									<option>Projects</option>
+								</select></td>
+								<td><input type="text" class="form-control" placeholder="Search"></td>
+								<td><select class="form-control selectpicker" multiple>
+        									<optgroup label="action required">
+        										<option>Late</option>
+        										<option>Unsettled</option>
+        										<option>In progress</option>
+        									</optgroup>
+        									<optgroup label="others">
+        										<option>Kept</option>
+        										<option>Transfered</option>
+        									</optgroup>
+        									
+     							</select></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in inventory"  ng-class="ctrl.contextualize(item)">
+								<td>{{ item.type }}</td>
+								<td>{{ item.name }} ill etait une fois etc...</td>
+								<td>{{ item.status }}</td>
+							</tr>
+							
+							
+						</tbody>
+					</table>
+				
+			</div>
+		</div>
+		
+		
+	</div>
+</div>
+{% endverbatim %}		
+<script>$('.selectpicker').selectpicker();</script>
+
+
+
+	

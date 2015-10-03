@@ -1,0 +1,26 @@
+<h4>Add to inventory</h4>
+{{ form_start(form, {'attr':{'novalidate':'novalidate', 'ng-submit':'inventory.addItem()'} })}}
+	<div class="form-group">
+        {{ form_label(form.type) }}
+        {{ form_widget(form.type, {'attr':{'class':'form-control', 'ng-model':'newItem.type'}})}}
+    </div>
+ 	<div class="form-group">
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name, {'attr':{'class':'form-control', 'ng-model':'newItem.name'}})}}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.description) }}
+        {{ form_widget(form.description, {'attr':{'class':'form-control', 'ng-model':'newItem.description'}})}}
+    </div>
+    
+    <div class="btn-group">
+			<button class="btn btn-info">Keep</button>
+			<button class="btn btn-default" type="submit">Settle later</button>
+			<button class="btn btn-warning">Transfer</button>
+	</div>
+    	
+   
+    <button class="btn btn-link">Cancel</button>
+    			
+    	
+{{ form_end(form) }}

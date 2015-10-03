@@ -1,0 +1,23 @@
+<table class="table table-striped table-bordered table-hover" >
+    				<thead>
+    					<tr>
+    					<th ng-click="orderBy('lastname')">Consultants</th>
+    					<th ng-click="orderBy('firstname')">Jours</th>
+    					<th ng-click="orderBy('email')">PV</th>
+    					<th ng-click="orderBy('phone')">Total</th>
+    					<tr>
+    				</thead>
+    				<tbody>
+    					
+    				<tr ng-repeat="employee in employees | orderBy:predicate:reverse" ng-click="go()">
+    						<td>consultant</td>
+    						<td>jours</td>
+    						<td>PV</td>
+    						<td>sous-total</td>
+    				</tr>
+    				
+    				<tr>
+    				   					
+    					
+    				</tbody>
+    			</table>

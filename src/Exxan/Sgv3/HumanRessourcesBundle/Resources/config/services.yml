@@ -1,0 +1,4 @@
+services:
+#    sgv3_hr.example:
+#        class: Exxan\Sgv3\HumanRessourcesBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

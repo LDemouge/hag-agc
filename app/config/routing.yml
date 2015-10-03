@@ -1,0 +1,54 @@
+login_check:
+    pattern:  /login_check
+logout:
+    pattern:  /logout
+
+transformation:
+    resource: "@TransformationBundle/Controller"
+    type:     annotation
+    
+
+#sgv3_user:
+#    resource: "@Sgv3UserBundle/Resources/config/routing.yml"
+#    prefix:   /user
+
+#sgv3_hr:
+#    resource: "@sgv3HrBundle/Resources/config/routing.yml"
+#    prefix:   /hr
+
+#sgv3_financial:
+#    resource: "@sgcv3FinancialBundle/Resources/config/routing.yml"
+#    prefix:   /fin
+
+#sgv3_prod:
+#    resource: "@sgv3ProdBundle/Resources/config/routing.yml"
+#    prefix:   /prod
+
+#sgv3_directory:
+#    resource: "@Sgv3DirectoryBundle/Resources/config/routing.yml"
+#    prefix:   /dir
+
+#sgv3_doc:
+#    resource: "@Sgv3DocBundle/Resources/config/routing.yml"
+#    prefix:   /doc
+
+#sgv3_sales_web:
+#    resource: "@Sgv3SalesBundle/Controller/Web"
+#    type:     annotation
+#    prefix: /SalesHub
+    
+#sgv3_sales_api:
+#    resource: "@Sgv3SalesBundle/Controller/Api"
+#    type:     annotation
+#    prefix:   /api/sales
+
+#go:
+#    resource: "@goBundle/Resources/config/routing.yml"
+#    prefix:   /go
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+    
+#demo:
+#    resource: "@AcmeDemoBundle/Resources/config/routing.yml"
+#    prefix:   /demo

@@ -1,0 +1,4 @@
+services:
+#    sgv3_directory.example:
+#        class: Exxan\Sgv3\DirectoryHubBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,64 @@
+{% extends '::base.html.twig' %}
+
+
+{% block title %}
+	HAGER - Alter&Go 
+{%  endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<link href="{{ asset('bundles/transformation/css/reporter.css') }}" type="text/css" rel="stylesheet" />
+<link href="{{ asset('bootstrap-select/dist/css/bootstrap-select.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block body %}
+
+	
+	
+    <div ng-app="report" ng-controller="main as mainCtrl">
+    	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+		
+    		<!-- Brand and toggle get grouped for better mobile display -->
+    		<div class="navbar-header">
+      			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        			<span class="sr-only">Toggle navigation</span>
+        			<span class="icon-bar"></span>
+       				<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+      			</button>
+      			<a class="navbar-brand" href="#">
+      				<img alt="Brand" src="{{ asset('bundles/transformation/images/logo.png') }}" height="100%">
+      			</a>
+    		</div>
+    	
+    		<!-- Collect the nav links, forms, and other content for toggling -->
+    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    			<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a>  </p>
+				<ul class="nav  navbar-nav">
+					<li ng-class="{active: isSelected(1)}" ng-click="select(1)"><a href>Home</a></li>
+					<li ng-class="{active: isSelected(2)}" ng-click="select(2)"><a href>Inventory</a></li>
+					<li ng-class="{active: isSelected(3)}" ng-click="select(3)"><a href>Functionning target</a></li>
+					<li ng-class="{active: isSelected(4)}" ng-click="select(4)"><a href>Action Plan</a></li>
+					<li ng-class="{active: isSelected(5)}" ng-click="select(5)"><a href>HR Hand-over</a></li>
+					
+   				</ul>
+			</div>
+		
+		</div></nav>
+		
+		<home ng-show="isSelected(1)"></home>
+		<inventory ng-show="isSelected(2)"></inventory>
+		<functionning-target ng-show="isSelected(3)"></functionning-target>
+		<action-plan ng-show="isSelected(4)"></action-plan>
+		<hr-plan ng-show="isSelected(5)"></hr-plan>
+    	
+    </div>
+    
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('bundles/transformation/js/report.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/transformation/js/selectpicker.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bootstrap-select/js/bootstrap-select.js') }}"></script>
+{% endblock %}

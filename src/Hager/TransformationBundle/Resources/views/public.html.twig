@@ -1,0 +1,67 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+	<link href="{{ asset('bundles/transformation/css/public.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}
+	HAGER - Alter&Go 
+{%  endblock %}
+
+
+{% block body %}
+	<div class="container" ng-app="report" ng-controller="security as securityCtrl">
+		<div class="row">
+			<div class="col-lg-12">
+				<img class="img-responsive" src="{{ asset('bundles/transformation/images/logo.png') }}"></div>
+			<div class="col-md-6 margin-top-30" >
+				<div class="embed-responsive embed-responsive-16by9">
+  					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qNClY0hMABE" allowfullscreen></iframe></div></div>
+			<div class="col-md-6 margin-top-30">
+				<div class="panel"><div class="well well-lg">
+					
+ 					 	<h2>Transformation App</h2>
+ 					 	<p class="lead">Pellentesque sem urna, viverra pulvinar. Aenean id lorem...</p>
+					
+				</div></div>
+				
+				<div class="panel"><legend>Sign in to your App</legend>
+				
+				{% if error %}
+    				<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+				{% endif %}
+
+				<div class="form-group has-success">
+					 <form action="{{ path('login_check') }}" method="post" class="form-inline">  
+					<!--<form  ng-submit="securityCtrl.login" class="form-inline">-->
+    				
+    				<div class="input-group">
+    					<span class="input-group-addon" id="basic-addon1">@</span>
+    					<input class="form-inline form-control" type="text" id="username" ng-model="username" name="_username" value="{{ last_username }}" placeholder="Email"/>
+    				</div>
+			 		<input class="form-inline form-control" type="password" id="password" ng-model="password" name="_password" placeholder="Password"/>
+   				 
+
+    			{#
+     			   If you want to control the URL the user
+        			is redirected to on success (more details below)
+        			<input type="hidden" name="_target_path" value="/account" />
+    			#}
+
+    				<div class="btn-group"><button type="submit" class="btn btn-success">Sign in</button></div>
+					</form>
+				</div>
+				
+					
+				
+				</div>
+			</div>
+		</div>
+	
+		
+	</div>"
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('bundles/transformation/js/report.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,11 @@
+sgv3_directory_home:
+    path:     /
+    defaults: { _controller: Sgv3DirectoryBundle:Default:index }
+
+sgv3_directory_legal:
+    path: /legal-entities
+    defaults: { _controller: Sgv3DirectoryBundle:Companies:index }
+    
+sgv3_directory_physical:
+    path: /physical-entities
+    defaults: { _controller: Sgv3DirectoryBundle:People:index }

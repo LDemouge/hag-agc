@@ -1,0 +1,8 @@
+sgv3_doc_home:
+    path:     /
+    defaults: { _controller: Sgv3DocBundle:Default:index }
+    
+sgv3_doc_proposals:
+    path:   /proposals
+    defaults: { _controller: Sgv3DocBundle:Proposals:index }
+    

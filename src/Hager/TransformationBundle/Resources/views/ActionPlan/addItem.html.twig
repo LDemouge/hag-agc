@@ -1,0 +1,44 @@
+{% verbatim %}
+<form novalidate ng-submit="ctrl.addItem()">
+	
+	<div class="form-group">
+		<label>Activity</label>
+		<input type="text" class="form-control" ng-model="newItem.activity"></input>
+	</div>
+	
+	<div class="form-group">
+        <label>Leader</label>
+        <input type="text" class="form-control" ng-model="newItem.leader"></input>
+    </div>
+    
+    <div class="form-group">
+       <label>Description</label>
+       <textarea class="form-control" ng-model="newItem.description"></textarea>
+    </div>
+	
+	<div class="form-group">
+		<label>Deadline</label>
+		<div class="input-group" ng-controller="DatepickerCtrl">
+			<p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="$parent.newItem.deadline" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+		</div>
+	</div>
+	  
+    
+    <div class="btn-toolbar" role="toolbar">
+    	<div class="btn-group">
+			
+			<button class="btn btn-primary btn-sm" type="submit">Add this action</button>
+			
+		</div>
+    	
+   
+    	<div class="btn-group"><button class="btn btn-link btn-sm" ng-click="ctrl.reset()" type="reset">Reset</button></div>
+    </div>
+</form>
+<script>$('.selectpicker').selectpicker();</script>
+{% endverbatim %}

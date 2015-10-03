@@ -1,0 +1,203 @@
+
+{% verbatim %}
+<div class="row">
+	<ol class="breadcrumb">
+  		<li><h3><a href="#">DocumentsHub</a></h3></li>
+  		<li><a href="#">Proposals</a></li>
+  		<li class="active"><small>7b250275-991a-414e-a8a2-cea022787bd0</small></li>
+	</ol>
+</div>
+
+
+
+	<!-- <section class="col-md-10 col-sm-9 col-xs-8"> --->
+	<div ng-controller="TabController as tabCtrl"> 
+		<div class='row'>
+			
+				<ul class="nav nav-pills nav-justified">
+				
+						<li ng-class="{active: tabCtrl.isSelected(1)}" ng-click="tabCtrl.setTab(1)" ><a href>Synthèse</a></li>
+				  					
+  						<li ng-class="{active: tabCtrl.isSelected(2)}" ng-click="tabCtrl.setTab(2)"><a href>Parties</a></li>
+  						
+  						<li ng-class="{active: tabCtrl.isSelected(3)}" ng-click="tabCtrl.setTab(2)"><a href>Objet</a></li>
+  						
+  						<li ng-class="{active: tabCtrl.isSelected(4)}" ng-click="tabCtrl.setTab(2)"><a href>Durée</a></li>
+  						
+  						<li ng-class="{active: tabCtrl.isSelected(5)}" ng-click="tabCtrl.setTab(2)"><a href>Exécution</a></li>
+  					  				
+  						<li ng-class="{active: tabCtrl.isSelected(6)}" ng-click="tabCtrl.setTab(3)"><a href>Calendrier / Délais  <span class="badge">4</span></a></li>
+  				
+  						<li ng-class="{active: tabCtrl.isSelected(7)}" ng-click="tabCtrl.setTab(4)"><a href>Autres  <span class="badge">2</span></a></li>
+  					
+				</ul>
+			
+    		
+    	</div>
+
+
+		<div class="row">	
+			<div class="panel panel-info">
+    			<div class="panel-body">
+    			
+    			<div class="row">
+    			<div class="container">	
+    				<nav class="nav">
+    				
+    				
+    				 	<div ng-show="tabCtrl.isSelected(3)" class="btn-toolbar"> 
+    					
+    						<div class="btn-group">
+    							<button type="button" class="btn btn-primary navbar-btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    								Nouvelle prestation 
+    								<span class="caret"></span> 
+    							</button>
+    							<ul class="dropdown-menu">
+  									  <li><a href>A.T.G.</a></li>
+  									  <li role="separator" class="divider"></li>
+  									  <li><a href>Forfait</a></li>
+  									  <li><a href>Régie</a></li>
+  									  <li><a href>Régie forfaitée</a></li>
+  									  <li><a href>Forfait régitisé</a></li>
+  									 
+  								</ul>
+    						</div>
+    						
+    						    						
+    						<div class="btn-group">
+    							<button class="btn btn-info navbar-btn"><span class="glyphicon glyphicon-list"></span> </button>
+    							<button class="btn btn-info navbar-btn"><span class="glyphicon glyphicon-th-large"></span></button>
+    						</div>
+    						
+    					</div>  <!--end btn-toolbar -->
+    				<!--
+    					<div class="input-group">
+      						<span class="input-group-btn">
+        						<button class="btn btn-default navbar-btn" type="button">Go!</button>
+      						</span>
+      						<input type="text" class="form-control navbar-form" width="80px" placeholder="Search for...">
+    					</div><!-- end input-group -->
+    					
+    				</nav></div> 	<!-- end container -->
+    			</div> <!-- end row :: nav-->
+    					
+    				
+    				
+    		<div class="row" ng-show="tabCtrl.isSelected(3)">		
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="thumbnail">
+								<div class="caption">
+									<h4>ATG</h4>
+									<p>4 Consultant(s)</p>
+									<h6><small>De Juillet à Décembre 2015</small></h6>
+									<p><a href="#" class="btn btn-xs btn-inverse" role="button">Actionner</a> <a href="#" class="btn btn-warning btn-xs" role="button">Supprimer</a></p>
+								</div>
+							</div>
+						</div>	
+							
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="thumbnail">
+								<div class="caption">
+									<h4>ATG</h4>
+									<p>4 Consultant(s)</p>
+									<h6><small>De Juillet à Décembre 2015</small></h6>
+									<p><a href="#" class="btn btn-xs btn-inverse" role="button">Actionner</a> <a href="#" class="btn btn-warning btn-xs" role="button">Supprimer</a></p>
+								</div>
+							</div>
+						</div>	
+						
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="thumbnail">
+								<div class="caption">
+									<h4>Régie</h4>
+									<p>Consultant(s) : <span class="label label-danger">NC</span></p>
+									<h6><small>De Juillet à Décembre 2015</small></h6>
+									<p><a href="#" class="btn btn-xs btn-inverse" role="button">Actionner</a> <a href="#" class="btn btn-warning btn-xs" role="button">Supprimer</a></p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="thumbnail">
+								<div class="caption">
+									<h4>Régie forfaitée</h4>
+									<p>4 Consultant(s)</p>
+									<h6><small>De Juillet à Décembre 2015</small></h6>
+									<p><a href="#" class="btn btn-xs btn-inverse" role="button">Actionner</a> <a href="#" class="btn btn-warning btn-xs" role="button">Supprimer</a></p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="thumbnail">
+								<div class="caption">
+									<h4>Forfait régitisé</h4>
+									<p>4 Consultant(s)</p>
+									<h6><small>De Juillet à Décembre 2015</small></h6>
+									<p><a href="#" class="btn btn-xs btn-inverse" role="button">Actionner</a> <a href="#" class="btn btn-warning btn-xs" role="button">Supprimer</a></p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="thumbnail">
+								<div class="caption">
+									<h4>Régie forfaitisée</h4>
+									<p>4 Consultant(s)</p>
+									<h6><small>De Juillet à Décembre 2015</small></h6>
+									<p><a href="#" class="btn btn-xs btn-inverse" role="button">Actionner</a> <a href="#" class="btn btn-warning btn-xs" role="button">Supprimer</a></p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="thumbnail">
+								<div class="caption">
+									<h4>Régie forfaitisée</h4>
+									<p>4 Consultant(s)</p>
+									<h6><small>De Juillet à Décembre 2015</small></h6>
+									<p><a href="#" class="btn btn-xs btn-inverse" role="button">Actionner</a> <a href="#" class="btn btn-warning btn-xs" role="button">Supprimer</a></p>
+								</div>
+							</div>
+						</div>
+						
+						
+				</div><!-- end row :: thumbnails  -->
+				
+				
+				
+				<div class="row" ng-show="tabCtrl.isSelected(1)">
+					<div class="col-md-6 col-sm-12">
+						<ordo-form></ordo-form>					
+					</div>
+					<div class='col-md-6 col-sm-12'>	
+						<nvd3-line-chart
+        					data="data"
+       						showXAxis="true"
+        					showYAxis="true"
+        					tooltips="true"
+        					interactive="true">
+    					</nvd3-line-chart>    	
+					</div>
+				</div>
+				
+				
+	</div></div> <!-- end panel -->
+	</div> <!-- end row panel -->
+
+</div> <!-- end TabCtrl -->
+    
+{% endverbatim %}
+
+<!--  
+	<div class='col-md-3'>
+	
+		<ordo-form></ordo-form>
+		
+	</div>
+	<div class="col-md-6">
+		<p>Coming soon ...</p>
+	</div>
+	
+-->	
+<!--</div>  endrow -->

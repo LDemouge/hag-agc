@@ -1,0 +1,33 @@
+{% verbatim %}
+<div class="container-fluid" ng-controller="functionning_target as ctrl">
+	<!-- <div class="row">{{ test }}</div> -->
+	<div class="row">
+		<div class="col-md-3">
+			
+			<div class="panel panel-default">
+		 		<div class="panel-heading">
+					<h5 class="panel-title" ng-click="isCollapsedAdd = !isCollapsedAdd">Add a target</h5>
+				</div>
+				<div class="panel-body" ng-show="!isCollapsedAdd">
+					<add-target></add-target>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-9"><div class="row">
+		<div ng-repeat="target in targets | orderBy:[numberOfComments, nameLength]">
+			<div class="col-md-3 col-sm-6">
+				<div class="panel" ng-class="{ 'panel-danger': newItem.category && newItem.category == target.name, 'panel-info': !newItem || !newItem.category || newItemCategory != target.name }">
+					<div class="panel-heading"><h5 class="panel-title">{{ target.name }}</h5></div>
+					<!--  <div class="panel-body">-->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-warning" ng-show="target.name == newItem.category && newItem.comment">{{ newItem.comment }}</li>
+							<li class="list-group-item" ng-repeat="comment in target.comments">{{ comment }}</li>
+						</ul>
+					<!--  </div>-->
+				</div>
+			</div>
+		</div>
+		</div></div>
+	</div>
+</div>
+{% endverbatim %}

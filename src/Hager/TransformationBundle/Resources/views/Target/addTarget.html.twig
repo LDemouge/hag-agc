@@ -1,0 +1,52 @@
+{% verbatim %}
+<form novalidate ng-submit="ctrl.addComment()">
+	<div class="form-group">
+		<label>Category</label>
+		<select ng-model="newItem.category" class="form-control">
+			<option value="" disabled selected> Please choose ...</option>
+			<option ng-repeat="target in targets">{{ target.name }}</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label>Add a target</label>
+		<input type="text" class="form-control" placeholder="Briefly describe your point..." ng-model="newItem.comment"></input>
+	</div>
+	<button class="btn btn-primary btn-sm" type="submit">Add this target</button>
+			<button class="btn btn-link btn-sm" ng-click="ctrl.resetForm()" type="reset">Reset</button>
+			<div  class="btn-toolbar" role="toolbar">
+	<!-- 	<div class="btn-group">
+			<button class="btn btn-primary btn-sm" type="submit">Add this target</button>
+			<button class="btn btn-link btn-sm" ng-click="resetForm()" type="reset">Reset</button>
+		</div> -->
+	</div>
+<!--  
+	
+	<div class="form-group">
+        <label>Type hip hop</label>
+        <select class="form-control" ng-model="newItem.type" ng-options="target.name for target in targets">
+        	<option value="" disabled>Choose the category...</option>
+        </select>
+    </div>
+	<div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" ng-model="newItem.name"></input>
+    </div>
+ 	
+    <div class="form-group">
+       <label>Description</label>
+       <textarea class="form-control" ng-model="newItem.description"></textarea>
+    </div>
+    
+    <div class="btn-toolbar" role="toolbar">
+    	<div class="btn-group">
+			<button class="btn btn-info btn-sm" type="submit" ng-click="ctrl.keep()">Keep</button>
+			<button class="btn btn-default btn-sm" type="submit" ng-click="ctrl.settleLater()">Settle later</button>
+			<button class="btn btn-warning btn-sm" ng-click="ctrl.transfer()">Transfer</button>
+		</div>
+    	
+   
+    	<div class="btn-group"><button class="btn btn-link btn-sm" ng-click="ctrl.reset()" type="reset">Reset</button></div>
+    </div>
+-->
+</form>
+{% endverbatim %}

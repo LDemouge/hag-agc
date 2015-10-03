@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+
+
+{% block title %}
+	Go Base Page
+{%  endblock %}
+
+
+{% block body %}
+
+	{% block menu %}
+	{% endblock %}
+	
+    <div ng-app="go" class="container">
+    	{% block content %}{% endblock %}
+    </div>
+    
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('/bundles/go/js/app.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,29 @@
+go_homepage:
+    path:     /
+    defaults: { _controller: goBundle:Default:index }
+    
+go_adjustOrdoItem:
+    path: /adjustOrdoItem
+    defaults: { _controller: goBundle:Go:adjustOrdoItem }
+    options:
+        expose: true
+    
+go_employeesList:
+    path: /employeesList
+    defaults: { _controller: goBundle:Go:employeesList }
+    
+go_employeesListPartial:
+    path: /employees-list
+    defaults: { _controller: goBundle:Go:employeesListPartial }
+    options:
+        expose: true
+
+go_renderForm:
+    path: /form
+    defaults: { _controller: goBundle:Go:renderForm }
+    options:
+        expose: true
+        
+go_syntheseProposals:
+    path: /propales/synthese
+    defaults: { _controller: goBundle:Go:syntheseProposals}

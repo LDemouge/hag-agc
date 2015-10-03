@@ -1,0 +1,3 @@
+sgcv3_financial_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: sgcv3FinancialBundle:Default:index }
