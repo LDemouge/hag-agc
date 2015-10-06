@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Hager\TransformationBundle\Form\Type\AddActionPlanItemType;
 
 /**
- * @Route("/app/action-plan")
+ * @Route("/application/action-plan")
  */
 
 class ActionPlanController extends Controller

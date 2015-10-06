@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Hager\TransformationBundle\Form\Type\AddInventoryItemType;
 
 /**
- * @Route("/app/inventory")
+ * @Route("/application/inventory")
  */
 
 class InventoryController extends Controller

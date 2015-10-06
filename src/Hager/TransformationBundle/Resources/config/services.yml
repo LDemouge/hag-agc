@@ -1,6 +1,6 @@
 services:
-    transformation.action_plan:
-        class:  Hager\TransformationBundle\Service\ActionPlanService
+    transformation.carto_loader:
+        class:  Hager\TransformationBundle\Service\CartographyManager
 #    transformation.example:
 #        class: Hager\TransformationBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]

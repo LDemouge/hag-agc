@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 
 /**
- * @Route("/app/supervisor")
+ * @Route("/application/supervisor")
  */
 
 class SupervisorController extends Controller
@@ -20,9 +20,19 @@ class SupervisorController extends Controller
 	 */
 	 public function homeAction()
 	 {
-	 	return new Response("<h1>Supervisors'app - Home</h1>");
+	 	$cartoLoader = $this->get('transformation.carto_loader');
+		$carto = $cartoLoader->load();
+
+					
+		
+	 	return $this->render('TransformationBundle::supervisor.html.twig', array('user'=>$this->getUser()->getUsername(), 'carto'=>$carto));
 	 }
-	 
 	
-	
+	/**
+	 * @Route ("/cartography", name="supervisor_cartography", options={"expose"=true})
+	 */
+	public function cartographyAction()
+	{
+		return $this->render('TransformationBundle::cartography.html.twig');
+	}
 }

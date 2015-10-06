@@ -40,10 +40,10 @@ security:
             #    realm: "Secured Demo Area"
 
     access_control:
-        - { path: ^/app/supervisor/, roles: ROLE_SUPERVISOR}
-        - { path: ^/app/reporter/, roles: ROLE_REPORTER}
-        - { path: ^/app, roles: IS_AUTHENTICATED_REMEMBERED}
-        - { path: ^/api/, roles: ROLE_REPORTER}
+        - { path: ^/application/supervisor/, roles: ROLE_SUPERVISOR}
+        - { path: ^/application/reporter/, roles: ROLE_REPORTER}
+        - { path: ^/application, roles: IS_AUTHENTICATED_REMEMBERED}
+        - { path: ^/api/, roles: IS_AUTHENTICATED_REMEMBERED}
         - { path: ^/login_success, roles: IS_AUTHENTICATED_REMEMBERED}
         - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY}
         

@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Hager\TransformationBundle\Form\Type\AddInventoryItemType;
 
 /**
- * @Route("/app/reporter")
+ * @Route("/application/reporter")
  */
 
 class ReporterController extends Controller
@@ -19,7 +19,7 @@ class ReporterController extends Controller
 		
 	public function startAction()
 	{
-		return $this->render('TransformationBundle::reporter.html.twig');
+		return $this->render('TransformationBundle::reporter.html.twig', array('user'=>$this->getUser()->getUsername()));
 	}
 	
 	/**
@@ -61,7 +61,7 @@ class ReporterController extends Controller
 	 */
 	 public function hrPlanAction()
 	 {
-	 	return $this->render('TransformationBundle:Reporter:hr-plan.html.twig');
+	 	return $this->render('TransformationBundle:Inventory:addInventoryItem.html.twig');
 	 }
 	 
 	
