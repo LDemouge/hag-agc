@@ -1,0 +1,23 @@
+{% verbatim %}
+<div class="container-fluid" ng-show="authorized">
+	<div class="row">
+		<div class="col-md-6" ng-repeat="department in carto.records | orderBy:'count'">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h6 class="panel-title">{{ department.department }}</h6></div>
+				<div class="panel-body">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-2 col-sm-3 col-xs-4 margin-top-05" ng-repeat="entity in department.entities">
+								<button type="button" class="btn btn-block" ng-class="mainCtrl.contextualize(entity)" popover="{{ entity.reporter }}" popover-title="{{entity.label}}" popover-trigger="focus" >{{ entity.code }}</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+{% endverbatim %}
