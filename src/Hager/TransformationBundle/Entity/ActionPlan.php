@@ -21,8 +21,15 @@ class ActionPlan
      */
     private $id;
 	
+	 /**
+     * @var boolean
+     *
+     * @ORM\Column(name="complete", type="boolean")
+     */
+    private $complete = false;
+	
 	/**
-	 * @ORM\Column(name="validatedBy", type="string")
+	 * @ORM\Column(name="validatedBy", type="string", nullable=true)
 	 */
 	 private $validatedBy;
 
@@ -36,5 +43,52 @@ class ActionPlan
     {
         return $this->id;
     }
-}
 
+    /**
+     * Set validatedBy
+     *
+     * @param string $validatedBy
+     *
+     * @return ActionPlan
+     */
+    public function setValidatedBy($validatedBy)
+    {
+        $this->validatedBy = $validatedBy;
+
+        return $this;
+    }
+
+    /**
+     * Get validatedBy
+     *
+     * @return string
+     */
+    public function getValidatedBy()
+    {
+        return $this->validatedBy;
+    }
+
+    /**
+     * Set complete
+     *
+     * @param boolean $complete
+     *
+     * @return ActionPlan
+     */
+    public function setComplete($complete)
+    {
+        $this->complete = $complete;
+
+        return $this;
+    }
+
+    /**
+     * Get complete
+     *
+     * @return boolean
+     */
+    public function getComplete()
+    {
+        return $this->complete;
+    }
+}

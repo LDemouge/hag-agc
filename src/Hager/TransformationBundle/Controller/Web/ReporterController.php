@@ -5,7 +5,7 @@ namespace Hager\TransformationBundle\Controller\Web;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
-use Hager\TransformationBundle\Form\Type\AddInventoryItemType;
+
 
 /**
  * @Route("/application/reporter")
@@ -61,7 +61,7 @@ class ReporterController extends Controller
 	 */
 	 public function hrPlanAction()
 	 {
-	 	return $this->render('TransformationBundle:Inventory:addInventoryItem.html.twig');
+	 	return $this->render('TransformationBundle:Reporter:home.html.twig');
 	 }
 	 
 	
@@ -70,9 +70,9 @@ class ReporterController extends Controller
 	 */
 	public function addInventoryItem()
 	{
-		$form = $this->createForm(new AddInventoryItemType);
 		
-		return $this->render('TransformationBundle:Inventory:addInventoryItem.html.twig', array('form' =>$form->createView()));
+		
+		return $this->render('TransformationBundle:Inventory:addInventoryItem.html.twig');
 		
 	}
 	

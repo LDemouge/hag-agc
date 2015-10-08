@@ -3,6 +3,7 @@
 namespace Hager\TransformationBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Hager\TransformationBundle\Entity\ActionPlan;
 
 /**
  * Action
@@ -50,7 +51,7 @@ class Action
     private $deadline;
 	
 	/**
-	 * @ORM\ManyToOne(targetEntity="TransformationBundle\Entity\ActionPlan")
+	 * @ORM\ManyToOne(targetEntity="Hager\TransformationBundle\Entity\ActionPlan")
 	 * @ORM\JoinColumn(nullable=false)
 	 */
 	 private $actionPlan;
@@ -161,5 +162,28 @@ class Action
     {
         return $this->deadline;
     }
-}
 
+    /**
+     * Set actionPlan
+     *
+     * @param \TransformationBundle\Entity\ActionPlan $actionPlan
+     *
+     * @return Action
+     */
+    public function setActionPlan(ActionPlan $actionPlan)
+    {
+        $this->actionPlan = $actionPlan;
+
+        return $this;
+    }
+
+    /**
+     * Get actionPlan
+     *
+     * @return \TransformationBundle\Entity\ActionPlan
+     */
+    public function getActionPlan()
+    {
+        return $this->actionPlan;
+    }
+}

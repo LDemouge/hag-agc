@@ -32,7 +32,7 @@ class User implements UserInterface, EquatableInterface
     private $password;
 	
 	/**
-	 * @ORM\Column(name="salt", type="string", length=255, unique=true)
+	 * @ORM\Column(name="salt", type="string", length=255, nullable=true)
 	 */
     private $salt;
 	
@@ -41,19 +41,11 @@ class User implements UserInterface, EquatableInterface
 	 */
     private $roles = array();
 	
-	/**
-	 * @ORM\Column(name="apikey", type="string", length=255, unique=true)
-	 */
-	private $apikey;
+	
+	
+	
 
-    public function __construct($username, $password, $salt = null, array $roles = array())
-    {
-        $this->username = $username;
-        $this->password = $password;
-        $this->salt = '';
-        $this->roles = $roles;
-		$this->apikey = '95e80a0c-6830-11e5-9d70-feff819cdc9f';
-    }
+    
 
     public function getRoles()
     {
@@ -98,5 +90,71 @@ class User implements UserInterface, EquatableInterface
         }
 
         return true;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     *
+     * @return User
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return User
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Set salt
+     *
+     * @param string $salt
+     *
+     * @return User
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+
+        return $this;
+    }
+
+    /**
+     * Set roles
+     *
+     * @param array $roles
+     *
+     * @return User
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+
+        return $this;
     }
 }

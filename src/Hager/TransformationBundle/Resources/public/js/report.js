@@ -7,7 +7,8 @@
 			return;};
 	}]);
 	
-	app.controller('main', function($scope){
+	app.controller('main', function($scope, $http){
+		$http.get(Routing.generate('api_reporter_load')).success(function(response){console.log(response);});
 		$scope.show = false;
 		$scope.selectedMenu = 1;
 		$scope.isSelected = function(menu){
@@ -18,7 +19,7 @@
 		};
 	});
 	
-	app.controller('inventory', function($scope){
+	app.controller('inventory', function($scope, $http){
 		$scope.types = [{label: 'Activity', value:"Activity"}, {label: 'Project', value: 'Project'}];
 		$scope.inventory = inventory;
 		$scope.isCollapsedAdd = true;
@@ -66,6 +67,9 @@
 		};
 		
 		this.addItem = function(){
+			$http.post(Routing.generate('api_inventory_addItem'), $scope.newItem).then(
+				function(response){console.log(response);}	
+			);
 			$scope.inventory.push($scope.newItem);
 			$scope.newItem = null;
 		};
